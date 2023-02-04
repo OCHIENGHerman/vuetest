@@ -40,4 +40,9 @@ Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
+//Test page
+Route::get('/test', function () {
+    return Inertia::render('Test');
+})->name('dashboard');
+
 require __DIR__.'/auth.php';
